@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Owey 💸
 
-## Getting Started
+Owey is a Gen-Z debt tracker for people who hate asking their friends for money back.
 
-First, run the development server:
+A financial tracking app disguised as a meme machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Track who owes you money, see how broke your friend group has made you, and send funny meme cards instead of awkward reminders.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Built because:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+"bro can you send the ₹300?"
+is somehow harder than lending the ₹300.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- Track debts between friends
+- Add custom notes and avatars
+- Dashboard with total lent, recovered, and pending money
+- Friend-wise debt history
+- Biggest Debtor™ leaderboard
+- Meme reminder generator
+- Download & share cards directly to WhatsApp
 
-To learn more about Next.js, take a look at the following resources:
+## Meme Lab
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Instead of sending:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> bro paise bhej de
 
-## Deploy on Vercel
+Send:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Random brainrot memes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The goal is to make reminders funny, not awkward.
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Supabase
+- PostgreSQL
+- Vercel
+
+## Why?
+
+Every friend group has:
+
+- The lender
+- The borrower
+- The guy who says "kal pakka"
+- The guy who forgot
+
+Owey exists for all of them.
+
+## Disclaimer
+
+If this app causes your friend to finally return your ₹87 from 8 months ago, that's on you.
+
+---
