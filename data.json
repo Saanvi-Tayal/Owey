@@ -1,0 +1,26 @@
+{
+  "totalOwed": 3450,
+  "debtors": [
+    {
+      "id": "1",
+      "name": "Rohan",
+      "amount": 1450,
+      "avatarColor": "bg-purple-200 text-purple-700",
+      "emoji": "😎"
+    },
+    {
+      "id": "2",
+      "name": "Piyush",
+      "amount": 850,
+      "avatarColor": "bg-yellow-200 text-yellow-700",
+      "emoji": "🤓"
+    },
+    {
+      "id": "3",
+      "name": "Akash",
+      "amount": 1150,
+      "avatarColor": "bg-teal-200 text-teal-700",
+      "emoji": "🤠"
+    }
+  ]
+}
