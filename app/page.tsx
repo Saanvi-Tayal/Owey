@@ -25,7 +25,7 @@ export default function OweyDashboard() {
   const router = useRouter();
   const [checkingAuth, setCheckingAuth] = useState(true);
   const [loadingData, setLoadingData] = useState(false);
-  
+
   // Real-time application states
   const [debtors, setDebtors] = useState<Debtor[]>([]);
   const [balances, setBalances] = useState<Record<string, number>>({});
@@ -113,7 +113,7 @@ export default function OweyDashboard() {
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans antialiased">
       <div className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 lg:p-12">
-        
+
         {/* Header Section */}
         <header className="flex items-center justify-between mb-8 md:mb-12">
           <div className="flex items-center gap-3">
@@ -123,15 +123,14 @@ export default function OweyDashboard() {
             <span className="text-xl md:text-2xl font-black tracking-tight text-neutral-900">owey.</span>
           </div>
           <div className="flex items-center gap-2">
-            <Link href="/reminder">
-              <Button variant="outline" size="icon" className="rounded-full relative bg-white border-neutral-200 h-10 w-10">
-                <Bell className="h-5 w-5 text-neutral-700" />
-                <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full"></span>
+            <Link href="/share">
+              <Button className="bg-[#bcff4f] hover:bg-[#a6e63b] text-black font-black text-xs sm:text-sm uppercase tracking-wide border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center gap-2">
+                🧪 Meme Vault
               </Button>
             </Link>
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={handleSignOut}
               className="rounded-full h-10 w-10 text-neutral-500 hover:text-rose-500 hover:bg-rose-50"
             >
@@ -142,7 +141,7 @@ export default function OweyDashboard() {
 
         {/* Responsive Layout Grid */}
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start">
-          
+
           {/* LEFT COLUMN: Balance Highlight & Actions */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-1">
@@ -170,6 +169,7 @@ export default function OweyDashboard() {
                 </div>
               </CardContent>
             </Card>
+          
 
             {/* Form Routing Anchors */}
             <div className="space-y-3">
@@ -185,7 +185,28 @@ export default function OweyDashboard() {
                 </Button>
               </Link>
             </div>
+              <div className="grid grid-cols-2 gap-4 pt-2">
+              <Link href="/activity" className="block group">
+                <div className="bg-white border-2 border-neutral-200/60 group-hover:border-black p-4 rounded-2xl flex items-center gap-3 shadow-sm transition-all">
+                  <Users className="h-5 w-5 text-neutral-400" />
+                  <div>
+                    <p className="text-[10px] md:text-xs text-neutral-400 font-bold uppercase tracking-wider">Active Feed</p>
+                    <p className="text-sm md:text-base font-black text-neutral-800">{debtors.length} friends</p>
+                  </div>
+                </div>
+              </Link>
+              <Link href="/stats" className="block group">
+                <div className="bg-white border-2 border-neutral-200/60 group-hover:border-black p-4 rounded-2xl flex items-center gap-3 shadow-sm transition-all">
+                  <TrendingUp className="h-5 w-5 text-neutral-400" />
+                  <div>
+                    <p className="text-[10px] md:text-xs text-neutral-400 font-bold uppercase tracking-wider">Analytics</p>
+                    <p className="text-sm md:text-base font-black text-neutral-800">Live Metrics</p>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
+          
 
           {/* RIGHT COLUMN: Real-Time Friend Leaderboard */}
           <div className="lg:col-span-7 space-y-6">
@@ -248,30 +269,35 @@ export default function OweyDashboard() {
             )}
 
             {/* Quick Metrics View Links */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              <Link href="/activity" className="block group">
-                <div className="bg-white border-2 border-neutral-200/60 group-hover:border-black p-4 rounded-2xl flex items-center gap-3 shadow-sm transition-all">
-                  <Users className="h-5 w-5 text-neutral-400" />
-                  <div>
-                    <p className="text-[10px] md:text-xs text-neutral-400 font-bold uppercase tracking-wider">Active Feed</p>
-                    <p className="text-sm md:text-base font-black text-neutral-800">{debtors.length} friends</p>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/stats" className="block group">
-                <div className="bg-white border-2 border-neutral-200/60 group-hover:border-black p-4 rounded-2xl flex items-center gap-3 shadow-sm transition-all">
-                  <TrendingUp className="h-5 w-5 text-neutral-400" />
-                  <div>
-                    <p className="text-[10px] md:text-xs text-neutral-400 font-bold uppercase tracking-wider">Analytics</p>
-                    <p className="text-sm md:text-base font-black text-neutral-800">Live Metrics</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
+          
+             <MemeSneakPeek />
           </div>
+          
 
         </main>
       </div>
+    </div>
+  );
+}
+function MemeSneakPeek() {
+  return (
+    <div className="bg-white border-2 border-black p-6 rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] my-8">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="font-black text-lg flex items-center gap-2">
+          🧪 Meme Vault <span className="text-xs bg-[#bcff4f] px-2 py-0.5 rounded-full border border-black">NEW</span>
+        </h3>
+        <Link href="/share" className="text-xs font-bold underline hover:text-purple-600">See All 52</Link>
+      </div>
+      <div className="grid grid-cols-3 gap-3">
+        {['/memes/Slice 10.png', '/memes/Slice 2.png', '/memes/Slice 7.png'].map((src, i) => (
+          <div key={i} className="aspect-square bg-neutral-100 rounded-xl overflow-hidden border-2 border-neutral-200">
+            <img src={src} alt="meme" className="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+      <p className="mt-4 text-xs font-bold text-neutral-500 text-center uppercase tracking-wider">
+        Nudge friends, don't nag them.
+      </p>
     </div>
   );
 }
