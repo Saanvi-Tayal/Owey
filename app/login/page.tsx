@@ -21,7 +21,9 @@ export default function LoginPage() {
 
     if (isSignUp) {
       // Handle registering a brand new user account
-      const { error } = await supabase.auth.signUp({ email, password });
+      const { error } = await supabase.auth.signUp({ email, password, options:{
+        emailRedirectTo: "https://owey-mu.vercel.app/"
+      } });
       if (error) {
         setErrorMsg(error.message);
       } else {
